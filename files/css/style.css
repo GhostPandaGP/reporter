@@ -1,0 +1,149 @@
+html{
+    box-sizing: border-box;
+}
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+html, body{
+    height: 100%;
+}
+body, *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+}
+
+ul, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.content{
+    flex: 1 0 auto;
+}
+.footer{
+    flex: 0 0 auto;
+}
+
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/*Google style start*/
+.headline{
+    font-size: 24pt;
+    line-height: 32pt;
+    margin-bottom: 32px;
+}
+.title{
+    font-weight: 500;
+    font-size: 20pt;
+    line-height: 23pt;
+    margin-bottom: 20px;
+}
+.subheader{
+    font-size: 16pt;
+    line-height: 24pt;
+    margin-bottom: 16px;
+}
+.body2{
+    font-size: 14pt;
+    font-weight: 500;
+    line-height: 24pt;
+    margin-bottom: 7px;
+}
+.body1{
+    font-size: 14pt;
+    line-height: 20pt;
+}
+.caption{
+    font-size: 12pt;
+    line-height: 16pt;
+}
+.light{
+    background-color: #eee;
+}
+.light .primary{
+    color: rgba(0, 0, 0, 0.87);
+}
+.light .secondary{
+    color: rgba(0, 0, 0, 0.54);
+}
+.light .disabled{
+    color: rgba(0, 0, 0, 0.38);
+}
+
+.dark{
+    background-color: #212121;
+}
+.dark .primary{
+    color: #fff;
+}
+.dark .secondary{
+    color: rgba(255, 255, 255, 0.7);
+}
+.dark .disabled{
+    color: rgba(255, 255, 255, 0.3);
+}
+/*Google style end*/
+
+.block{
+    margin-top: 70px;
+}
+
+.header{
+    height: 88px;
+}
+
+.block__note{
+    margin-bottom: 16px;
+}
+summary{
+    margin-bottom: 15px;
+}
+.table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+.table th, td{
+    text-align: left;
+    padding: 5px 20px 5px 10px;
+}
+.table th{
+    font-size: 14pt;
+    font-weight: 500;
+    line-height: 24pt;
+    text-align: left;
+}
+.table tr:nth-child(even) {
+  background-color: rgba(0, 187, 211, 0.11);
+}
+.table tr.dividing{
+    background-color: rgba(0, 0, 0, 0.11) !important;
+}
+.table .dividing td{
+    font-size: 1px;
+    line-height: 15px;
+    padding: 0;
+}
