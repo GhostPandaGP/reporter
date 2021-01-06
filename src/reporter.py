@@ -92,9 +92,9 @@ class Reporter:
         if self.soup is None:
             raise FileNotFoundError("Current report not selected or added!"
                                     " Use method .set_report or method .add_report!")
-        self.soup.select_one('.block1 > .container').append(element)
+        self.soup.select_one('.block1 > .container').append(str(element))
         with open(self.current_report, mode="r+") as f:
-            f.write(self.soup.prettify())
+            f.write(str(self.soup.prettify()).replace("&lt;", "<").replace("&gt;", ">"))
 
     def _get_content(self):
         if self.current_report is None:

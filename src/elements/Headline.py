@@ -1,10 +1,12 @@
-from .element import Element
+from .Element import Element
 
 
 class Headline(Element):
 
-    def __init__(self):
-        pass
+    def __init__(self, headline: str):
+        super().__init__()
+        self.content = self._formed_headline(headline)
 
-    def _set_content(self):
-        pass
+    @staticmethod
+    def _formed_headline(headline: str) -> str:
+        return f"""<div class='headline primary'>{headline}</div>"""

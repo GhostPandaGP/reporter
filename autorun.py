@@ -1,4 +1,6 @@
 from src.reporter import Reporter
+from src.elements.Table import Table
+from src.elements.Content import Content
 import pathlib
 
 
@@ -11,4 +13,18 @@ if __name__ == '__main__':
     # reporter.add_report("report3")
     print(reporter.get_list_reports())
     reporter.add_element_to_end("element")
+    table = Table(
+        {
+            "key": [1, 2, 3, 4, 5, 1, 2, 3, 4, 5],
+            "clock": [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+        }
+    )
+    print(table)
+    content = Content(
+        ["change 1", "change 2"],
+        ["conclusion 1"],
+        ["idea 1", "idea 2"],
+        table
+    )
+    reporter.add_element_to_end(content)
     # reporter.create_reports("reports1")
