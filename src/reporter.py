@@ -12,16 +12,16 @@ class Reporter:
         self.current_report = None
         self.soup = None
 
-    def create_reports(self, path_reports: str = "reports"):
+    def create_reports(self, name: str = "reports"):
         """Создает папку с отчетами по шаблону
 
         Args:
-            path_reports: папка, в которой будут хранится отчеты
+            name: папка, в которой будут хранится отчеты
 
         Returns:
 
         """
-        self.dir_report = self.root / path_reports
+        self.dir_report = self.root / name
         if self.dir_report.exists():
             raise FileExistsError("This reports dir already exist!")
         shutil.copytree(self.path_files, self.dir_report)
@@ -42,18 +42,18 @@ class Reporter:
         shutil.copy(self.dir_report / "template.html", self.current_report)
         self.soup = BeautifulSoup(self._get_content(), 'html.parser')
 
-    def set_report_dir(self, path: pathlib.Path):
+    def set_report_dir(self, name: str):
         """Установить папку с отчетами
 
         Args:
-            path: путь к папке с отчетами
+            name: путь к папке с отчетами
 
         Returns:
 
         """
-        path = pathlib.Path(path)
-        if path.exists():
-            self.dir_report = path
+        name = self.root / name
+        if name.exists():
+            self.dir_report = name
         else:
             raise FileExistsError("This path is not exist!")
 

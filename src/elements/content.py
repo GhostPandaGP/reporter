@@ -1,21 +1,27 @@
-from .Element import Element
-from .Table import Table
+from .element import Element
+from .table import Table
 
 
 class Content(Element):
 
     def __init__(
             self,
+            title: str,
             changes: list,
             conclusion: list,
             ideas: list,
             table: Table
     ):
         super().__init__()
-        self.content = self._formed_note("Изменения:", changes) \
+        self.content = self._formed_title(title) \
+                       + self._formed_note("Изменения:", changes) \
                        + self._formed_table(table) \
                        + self._formed_note("Выводы:", conclusion) \
                        + self._formed_note("Идеи:", ideas)
+
+    @staticmethod
+    def _formed_title(title: str):
+        return f"""<div class="title primary">{title}</div>"""
 
     @staticmethod
     def _formed_note(name: str, list_: list) -> str:

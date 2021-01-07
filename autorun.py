@@ -1,6 +1,6 @@
 from src.reporter import Reporter
-from src.elements.Table import Table
-from src.elements.Content import Content
+from src.elements.table import Table
+from src.elements.content import Content
 import pathlib
 
 
